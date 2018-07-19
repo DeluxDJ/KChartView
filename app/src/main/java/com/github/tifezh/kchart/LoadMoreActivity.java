@@ -26,14 +26,6 @@ import butterknife.ButterKnife;
 
 public class LoadMoreActivity extends AppCompatActivity implements KChartView.KChartRefreshListener {
 
-    @BindView(R.id.title_view)
-    RelativeLayout mTitleView;
-    @BindView(R.id.tv_price)
-    TextView mTvPrice;
-    @BindView(R.id.tv_percent)
-    TextView mTvPercent;
-    @BindView(R.id.ll_status)
-    LinearLayout mLlStatus;
     @BindView(R.id.kchart_view)
     KChartView mKChartView;
     private KChartAdapter mAdapter;
@@ -41,7 +33,7 @@ public class LoadMoreActivity extends AppCompatActivity implements KChartView.KC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_example_light);
+        setContentView(R.layout.activity_example);
         ButterKnife.bind(this);
         initView();
         initData();
@@ -72,11 +64,9 @@ public class LoadMoreActivity extends AppCompatActivity implements KChartView.KC
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            mLlStatus.setVisibility(View.GONE);
             mKChartView.setGridRows(3);
             mKChartView.setGridColumns(8);
         } else if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            mLlStatus.setVisibility(View.VISIBLE);
             mKChartView.setGridRows(4);
             mKChartView.setGridColumns(4);
         }
