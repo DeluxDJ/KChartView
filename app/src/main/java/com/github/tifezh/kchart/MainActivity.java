@@ -24,11 +24,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             case R.id.btn_style1:
                 intent.setClass(this,ExampleActivity.class);
-                intent.putExtra("type",0);
-                break;
-            case R.id.btn_style2:
-                intent.setClass(this,ExampleActivity.class);
-                intent.putExtra("type",1);
                 break;
             case R.id.btn_loadmore:
                 intent.setClass(this,LoadMoreActivity.class);
